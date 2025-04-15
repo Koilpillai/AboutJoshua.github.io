@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joshua Athelstan Koilpillai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2em;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 2em;
+      background-color: #fff;
+      padding: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    img {
+      margin: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Personal Website</h1>
+  </header>
+
+  <section id="about">
+    <h2>About Myself</h2>
+    <p>
+      My name is Joshua Athelstan Koilpillai. I'm 18 years old. My room is in the 2A wing of OBH E block, where all the cursed wing residents are, and I am not normal. I study as a student in IIITH, and I don't get back to my room everyday because I practically live in the ws. I don't deal drugs, but I occasionally deal organs. I'm never in bed, and make sure I get no sleep, no matter what (because this is an engineering college). After having a bottle of warm water and doing about 20 minutes of doomscrolling before fainting on the ws tables, I usually have no problems sleeping until I've missed all of my classes. Just unlike a baby, I wake up with intense fatigue and stress. I was told I have stage 4 kidney cancer at my last check-up. I'm trying to explain that I'm a person who wishes to live a very lifeless life. I take care not to trouble myself with any enemies, because we are all gonna get screwed by this college. That is how I deal with society, and I know that is what brings me depression. Although, if I were to fight I would lose to anyone.
+    </p>
+  </section>
+
+  <section id="photos">
+    <h2>Photos</h2>
+  
+    <h3>Profile Picture:</h3>
+    <img src="images/profilepic.jpeg" alt="Profile Picture" width="200">
+  
+    <h3>Locations From My Birthplace:</h3>
+    <div style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 650px;
+      margin: 0 auto;
+    ">
+      <div style="width: 300px;">
+        <img src="images/l1.jpeg" alt="Location 1" width="100%">
+      </div>
+      <div style="width: 300px;">
+        <img src="images/l2.jpeg" alt="Location 2" width="100%">
+      </div>
+      <div style="width: 300px;">
+        <img src="images/l3.jpeg" alt="Location 3" width="100%">
+      </div>
+      <div style="width: 300px;">
+        <img src="images/l4.jpeg" alt="Location 4" width="100%">
+      </div>
+    </div>
+
+
+    <h3>My Inspirations:</h3>
+    <div style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 650px;
+      margin: 0 auto;
+    ">
+      <div style="width: 300px; text-align: center;">
+        <img src="images/k2.jpg" alt="Inspiration 1" width="100%">
+        <p>AI Kanirudh Sarre</p>
+      </div>
+      <div style="width: 300px; text-align: center;">
+        <img src="images/seacc2.jpg" alt="Inspiration 2" width="100%">
+        <p>Seacc Sir</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="education">
+    <h2>Education Background and Achievements</h2>
+    <p>
+      Till 2nd grade, I studied in Canada. In the 3rd grade, I came to India and studied in this school called Wisdom. I went to Shrishti Vidyashram int the 4th grade and studied there till 12th. Throughout my school life, I have participated in several spelling bees and olympiads. I have also completed grade 3 in piano of the Trinity exams.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Proficient in top coding languages like c, c++, python and javascript.</li>
+      <li>Intricate knowledge of the inner binary workings of a computer.</li>
+      <li>Can cook minute noodles in 59 seconds.</li>
+      <li>Can solve advanced vector based equations pertaining to linear algebra.</li>
+      <li>Good with electronic engineering.</li>
+      <li>Incredibly talented in overexaggerating even the smallest accomplishments.</li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=MTW4sIL9Dpw" target="_blank">Will never rickroll you</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="cv">
+    <h2>My CV</h2>
+    <a href="https://docs.google.com/document/d/1Slnni9bn_h1OAvo1D7RECPiKND1ialiKhxQ_u2QS-_s/edit?usp=sharing" target="_blank">Click here to view my CV</a>
+  </section>
+  
+  <section id="text-analysis">
+    <h2>Text Analysis Tool</h2>
+    <textarea id="inputText" rows="20" cols="100" placeholder="Enter your cool text for scrutinization please :)"></textarea>
+    <br><br>
+    <button onclick="analyzeText()">Analyze Text</button>
+  
+    <div id="warning" style="color: red; font-weight: bold; margin-top: 1em;"></div>
+    <pre id="output" style="white-space: pre-wrap; background-color: #eee; padding: 1em; border-radius: 8px; margin-top: 1em;"></pre>
+  </section>
+  
+  <script>
+    function analyzeText() {
+      const text = document.getElementById("inputText").value;
+      const output = document.getElementById("output");
+      const warning = document.getElementById("warning");
+
+      const tokens = text.toLowerCase().match(/\b\w+\b/g) || [];
+      const wordCount = tokens.length;
+  
+      if (wordCount < 10000) {
+        warning.textContent = `Warning: Only ${wordCount} words entered. Pls enter at least 10,000 words.`;
+      } else {
+        warning.textContent = "";
+      }
+  
+      const letterCount = (text.match(/[a-zA-Z]/g) || []).length;
+      const spaceCount = (text.match(/ /g) || []).length;
+      const newlineCount = (text.match(/\n/g) || []).length;
+      const specialCharCount = (text.match(/[^a-zA-Z0-9\s]/g) || []).length;
+  
+      const pronouns = ["i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them", "my", "your", "his", "its", "our", "their", "mine", "yours", "hers", "ours", "theirs"];
+      const prepositions = ["in", "on", "at", "by", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "of", "off", "over", "under"];
+      const articles = ["a", "an"];
+  
+      const countGrouped = (group) => {
+        const count = {};
+        for (const word of tokens) {
+          if (group.includes(word)) {
+            count[word] = (count[word] || 0) + 1;
+          }
+        }
+        return count;
+      };
+  
+      const pronounCount = countGrouped(pronouns);
+      const prepositionCount = countGrouped(prepositions);
+      const articleCount = countGrouped(articles);
+  
+      let result = "";
+      result += `Letters: ${letterCount}\n`;
+      result += `Words: ${wordCount}\n`;
+      result += `Spaces: ${spaceCount}\n`;
+      result += `Newlines: ${newlineCount}\n`;
+      result += `Special Symbols: ${specialCharCount}\n\n`;
+  
+      result += "Pronoun Counts:\n" + JSON.stringify(pronounCount, null, 2) + "\n\n";
+      result += "Preposition Counts:\n" + JSON.stringify(prepositionCount, null, 2) + "\n\n";
+      result += "Indefinite Article Counts:\n" + JSON.stringify(articleCount, null, 2);
+  
+      output.textContent = result;
+    }
+  </script>    
+
+  <script>
+    function getElementType(el) {
+      if (!el) return "unknown";
+      const tag = el.tagName.toLowerCase();
+  
+      if (tag === "img") return "image";
+      if (tag === "select") return "dropdown";
+      if (tag === "input" || tag === "textarea") return "text input";
+      if (tag === "a") return "link";
+      if (tag === "button") return "button";
+      if (tag === "p" || tag === "span" || tag === "div") return "text";
+      return tag;
+    }
+  
+    function logEvent(type, element) {
+      const timestamp = new Date().toISOString();
+      const elemType = getElementType(element);
+      console.log(`${timestamp} , ${type} , ${elemType}`);
+    }
+  
+    window.addEventListener("load", () => {
+      logEvent("view", document.body);
+    });
+  
+    document.addEventListener("click", (event) => {
+      logEvent("click", event.target);
+    });
+  </script>
+  
+</body>
+</html>
